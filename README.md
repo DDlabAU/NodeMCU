@@ -14,7 +14,7 @@ Pinout for NodeMCU boardet:
 ![Pinout for NodeMCU V0.9](http://ddlab.dk/Node-MCU-Pin-Out-Diagram1.png)
 Det er GPIOx numrene som man bruger når man koder det i Arduino IDE'en.
 
-###Eksempler![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+###Eksempler
 Har du adgang til et trådløst netværk kan du bruge dette eksempel, der forbinder til netværket og printer den tildelte ip-adresse. Husk selv at indsætte netværksnavn og kode. Dette kan også gøres med et hotspot som du opretter med din smartphone.
 
 ```
