@@ -3,11 +3,16 @@ NodeMCU er et arduino-kompatibelt board med indygget wifi. Dette er en kort guid
 
 ###Kendte problemer
 
+NodeMCU modulerne bruger en alternativt seriel modul, som kræver særlige drivere både på MAC og [Windows](http://www.wch.cn/download/CH341SER_EXE.html). (Det virker selvfølgelig som det skal på linux. bum.)
+
+Kontakt en lab-medarbejder for adgang til den driver der skal bruges til OSX .. medmindre du har opdateret til ElCapitan ... Det er endnu ikke lykkedes nogen fra labbet at få hul igennem til et NodeMCU fra ElCapitan på MAC, men vi arbejder på det. :/
+
 
 ###Installation
 Sørg for at du har den nyeste version af [arduino](https://www.arduino.cc/en/Main/Software) installeret før du går i gang.
 For at anvende dette board skal du have installeret en pakke af custom boards i dit arduino IDE. Det gør du ved at åbne arduino og navigere til dine indstillinger: "File" -> "Preferences". I tekstboksen ud for "Additional Boards Manager URLs:" indsætter du dette link: http://arduino.esp8266.com/stable/package_esp8266com_index.json og trykker på "OK" knappen nederst i vinduet.
 Efter det skal du ind i din "Board Manager" og installere pakken. Det gør du ved at navigere til "Tools" -> "Board: " -> "Boards Manager...". Du scroller så ned indtil du finder "esp8266 by ESP8266 Community, trykker på denne boks og trykker så på "Install". Når installationen er færdig, vil du se en mængde nye boards at vælge imellem, når du bevæger dig til "Tools" -> "Board: ". Vælg enten "NodeMCU 0.9 (ESP-12 Module)" eller "NodeMCU 1.0 (ESP-12E Module)".
+
 
 ###GPIO
 Pinout for NodeMCU boardet:
@@ -43,7 +48,7 @@ static const uint8_t D8   = 15;
 static const uint8_t D9   = 3;
 static const uint8_t D10  = 1;
 ```
-Er vigtige.. .. Der står nemlig at de numre der står printet på modulet (D#) svarer til nogle andre numre i koden.
+Er vigtige.. .. Der står nemlig at de numre som er printet på modulet (D#) svarer til de ovenstående i koden.
 
 ###Eksempler
 Har du adgang til et trådløst netværk kan du bruge dette eksempel, der forbinder til netværket og printer den tildelte ip-adresse. Husk selv at indsætte netværksnavn og kode. Dette kan også gøres med et hotspot som du opretter med din smartphone.
