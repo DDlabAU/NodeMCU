@@ -14,6 +14,37 @@ Pinout for NodeMCU boardet:
 ![Pinout for NodeMCU V0.9](http://ddlab.dk/Node-MCU-Pin-Out-Diagram1.png)
 Det er GPIOx numrene som man bruger når man koder det i Arduino IDE'en.
 
+I det hele taget er GPIO lidt underligt på NodeMCU boardet, det er heldigvis ret godt beskrevet [her](https://github.com/esp8266/Arduino/blob/master/variants/nodemcu/pins_arduino.h#L37-L59)
+
+Især linierne:
+
+```
+static const uint8_t SDA = 4;
+static const uint8_t SCL = 5;
+
+static const uint8_t SS    = 15;
+static const uint8_t MOSI  = 13;
+static const uint8_t MISO  = 12;
+static const uint8_t SCK   = 14;
+
+static const uint8_t BUILTIN_LED = 16;
+
+static const uint8_t A0 = 17;
+
+static const uint8_t D0   = 16;
+static const uint8_t D1   = 5;
+static const uint8_t D2   = 4;
+static const uint8_t D3   = 0;
+static const uint8_t D4   = 2;
+static const uint8_t D5   = 14;
+static const uint8_t D6   = 12;
+static const uint8_t D7   = 13;
+static const uint8_t D8   = 15;
+static const uint8_t D9   = 3;
+static const uint8_t D10  = 1;
+```
+Er vigtige.. .. Der står nemlig at de numre der står printet på modulet (D#) svarer til nogle andre numre i koden.
+
 ###Eksempler
 Har du adgang til et trådløst netværk kan du bruge dette eksempel, der forbinder til netværket og printer den tildelte ip-adresse. Husk selv at indsætte netværksnavn og kode. Dette kan også gøres med et hotspot som du opretter med din smartphone.
 
