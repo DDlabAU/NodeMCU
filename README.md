@@ -151,3 +151,31 @@ void loop() {
 Vær i begge tilfælde opmærksom på at boardet ikke resetter når du åbner din "Serial Monitor", så hvis du vil være sikker på at alle dens print med, skal du åbne denne inden du uploader din kode. Husk også at indstille baudraten til "115200".
 Som altid kan du finde flere eksempler under "File" -> "Examples". Størstedelen af alle ESP8266 eksemplerne burde kunne anvendes med boardet.
 
+Bemærk hvordan vi i det første kodeeksempel antager at det trådløse netværk forbliver forbundet (dvs altid er indefor rækkevidde og så videre..) I virkeligheden er det smart lige at checke en gang i mellem om det stadig kører. Det kan man fx gøre med flg. funktion:
+```
+void wifiCheck()
+{
+if(WiFi.status() != WL_CONNECTED) //if wifi is connected: do nothing.
+	{
+  	int tickCount=0;
+  	Serial.println("Wifi dropped. Retry in 60 seconds.");
+	delay(60000); //wait 60 seconds
+  	Serial.println("Connecting");
+	WiFi.begin(ssid, password); //reconnect
+
+  	while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.println(".");
+      tickCount++;
+      if(tickCount>100) //after awaiting reconnection for 50 seconds
+    	  {
+          Serial.println("Wifi fail...");
+          while(1); //Endless loop...
+      	  }
+   	}
+
+   //This is the place to do something in case the connection was lost but fixed.
+
+	}
+}
+```
