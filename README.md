@@ -3,15 +3,24 @@ NodeMCU er et arduino-kompatibelt board med indygget wifi. Dette er en kort guid
 
 ###Kendte problemer
 
-NodeMCU modulerne bruger en alternativt seriel modul, som kræver særlige drivere både på MAC og [Windows](http://www.wch.cn/download/CH341SER_EXE.html). (Det virker selvfølgelig som det skal på linux. bum.)
+NodeMCU modulerne bruger en alternativt seriel modul, som kræver særlige drivere både på [MAC](http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/) og [Windows](http://www.wch.cn/download/CH341SER_EXE.html). 
 
-Kontakt en lab-medarbejder for adgang til den driver der skal bruges til OSX .. medmindre du har opdateret til ElCapitan ... Det er endnu ikke lykkedes nogen fra labbet at få hul igennem til et NodeMCU fra ElCapitan på MAC, men vi arbejder på det. :/
+~~ Kontakt en lab-medarbejder for adgang til den driver der skal bruges til OSX .. medmindre du har opdateret til ElCapitan ... Det er endnu ikke lykkedes nogen fra labbet at få hul igennem til et NodeMCU fra ElCapitan på MAC, men vi arbejder på det. :/ ~~
+
+Det er nu lykkedes at få hul igennem til ElCapitan!
 
 
-###Installation
+###Installation Windows 
+####og måske tidligere versioner af osx (ikke færdig testet).
 Sørg for at du har den nyeste version af [arduino](https://www.arduino.cc/en/Main/Software) installeret før du går i gang.
 For at anvende dette board skal du have installeret en pakke af custom boards i dit arduino IDE. Det gør du ved at åbne arduino og navigere til dine indstillinger: "File" -> "Preferences". I tekstboksen ud for "Additional Boards Manager URLs:" indsætter du dette link: http://arduino.esp8266.com/stable/package_esp8266com_index.json og trykker på "OK" knappen nederst i vinduet.
 Efter det skal du ind i din "Board Manager" og installere pakken. Det gør du ved at navigere til "Tools" -> "Board: " -> "Boards Manager...". Du scroller så ned indtil du finder "esp8266 by ESP8266 Community, trykker på denne boks og trykker så på "Install". Når installationen er færdig, vil du se en mængde nye boards at vælge imellem, når du bevæger dig til "Tools" -> "Board: ". Vælg enten "NodeMCU 0.9 (ESP-12 Module)" eller "NodeMCU 1.0 (ESP-12E Module)".
+
+###Installation ElCapitan
+Vi har indtil videre kun haft held med at bruge terminalen og git til installation af NodeMCU til ElCapitan og selvom det ser svært ud er det ganske ufarligt og du er velkommen til at spørge en ansat hvis du har problemer.Vi laver en guide om hvordan man bruger terminalen og git ganske snart. 
+På [denne hjemmeside](http://esp8266.github.io/Arduino/versions/2.1.0/doc/installing.html#boards-manager), kan du finde hvordan man henter de rigtige biblioteker og som sagt har vi haft mest held med git, men man kan også forsøge sig med første del af siden der forklarer hvordan man forklare det igennem Arduino IDE(/programmet).
+Efter man har fuldt instruktionerne, så installer denne [driver](http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/)(som er den vi har linket til i ovenstående).
+Nu skulle det være muligt at NodeMCU 0.9 under boards.
 
 
 ###GPIO
