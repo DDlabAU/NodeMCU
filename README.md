@@ -5,7 +5,7 @@ NodeMCU er et arduino-kompatibelt board med indygget wifi. Dette er en kort guid
 
 NodeMCU modulerne bruger en alternativt seriel modul, som kræver særlige drivere både på [MAC](http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/) og [Windows](http://www.wch.cn/download/CH341SER_EXE.html). 
 
-~~ Kontakt en lab-medarbejder for adgang til den driver der skal bruges til OSX .. medmindre du har opdateret til ElCapitan ... Det er endnu ikke lykkedes nogen fra labbet at få hul igennem til et NodeMCU fra ElCapitan på MAC, men vi arbejder på det. :/ ~~
+~~Kontakt en lab-medarbejder for adgang til den driver der skal bruges til OSX .. medmindre du har opdateret til ElCapitan ... Det er endnu ikke lykkedes nogen fra labbet at få hul igennem til et NodeMCU fra ElCapitan på MAC, men vi arbejder på det. :/~~
 
 Det er nu lykkedes at få hul igennem til ElCapitan!
 
