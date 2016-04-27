@@ -5,7 +5,7 @@ NodeMCU er et arduino-kompatibelt board med indygget wifi. Dette er en kort guid
 
 #### Suspekte fejlbeskeder
 
-Får du mærkelige fejlmeldinger fra boardet så som 
+Får du mærkelige fejlmeldinger fra boardet så som
 
 ```
 ets Jan 8 2013,rst cause:2, boot mode:(1,6)
@@ -14,12 +14,12 @@ ets Jan 8 2013,rst cause:4, boot mode:(1,6)
 ```
 
 
-kan en mulig løsning være bare at genstarte wifi-forbindelsen så den ikke forsøger at forbinde til den tidligere forbindelse. Dette gør du ved at indsætte ``` WiFi.persistent(false);``` helt i starten af din setup(). Det er vores erfaring at denne linje og kan være løsningen på fejlmeldinger/problemer, der ikke virker til at have noget at gøre med wifi-forbindelsen. Får du mærkelige problemer med boardet er det altså et forsøg værd, bare for at være på den sikre side. 
+kan en mulig løsning være bare at genstarte wifi-forbindelsen så den ikke forsøger at forbinde til den tidligere forbindelse. Dette gør du ved at indsætte ``` WiFi.persistent(false);``` helt i starten af din setup(). Det er vores erfaring at denne linje og kan være løsningen på fejlmeldinger/problemer, der ikke virker til at have noget at gøre med wifi-forbindelsen. Får du mærkelige problemer med boardet er det altså et forsøg værd, bare for at være på den sikre side.
 
 
 #### Seriel modul
 
-NodeMCU modulerne bruger en alternativt seriel modul, som kræver særlige drivere både på [MAC](http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/) og [Windows](http://www.wch.cn/download/CH341SER_EXE.html). 
+NodeMCU modulerne bruger en alternativt seriel modul, som kræver særlige drivere både på [MAC](http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/) og [Windows](http://www.wch.cn/download/CH341SER_EXE.html).
 
 
 ~~Kontakt en lab-medarbejder for adgang til den driver der skal bruges til OSX .. medmindre du har opdateret til ElCapitan ... Det er endnu ikke lykkedes nogen fra labbet at få hul igennem til et NodeMCU fra ElCapitan på MAC, men vi arbejder på det. :/~~
@@ -27,14 +27,20 @@ NodeMCU modulerne bruger en alternativt seriel modul, som kræver særlige drive
 Det er nu lykkedes at få hul igennem til ElCapitan!
 
 
-###Installation Windows 
+###Installation Windows
 ####og måske tidligere versioner af osx (ikke færdig testet).
 Sørg for at du har den nyeste version af [arduino](https://www.arduino.cc/en/Main/Software) installeret før du går i gang.
-For at anvende dette board skal du have installeret en pakke af custom boards i dit arduino IDE. Det gør du ved at åbne arduino og navigere til dine indstillinger: "File" -> "Preferences". I tekstboksen ud for "Additional Boards Manager URLs:" indsætter du dette link: http://arduino.esp8266.com/stable/package_esp8266com_index.json og trykker på "OK" knappen nederst i vinduet.
-Efter det skal du ind i din "Board Manager" og installere pakken. Det gør du ved at navigere til "Tools" -> "Board: " -> "Boards Manager...". Du scroller så ned indtil du finder "esp8266 by ESP8266 Community, trykker på denne boks og trykker så på "Install". Når installationen er færdig, vil du se en mængde nye boards at vælge imellem, når du bevæger dig til "Tools" -> "Board: ". Vælg enten "NodeMCU 0.9 (ESP-12 Module)" eller "NodeMCU 1.0 (ESP-12E Module)".
+For at anvende dette board skal du have installeret en pakke af custom boards i dit arduino IDE. Det gør du ved at åbne arduino og navigere til dine indstillinger:
+*"File" -> "Preferences".
+  *I tekstboksen ud for "Additional Boards Manager URLs:" indsætter du dette link: http://arduino.esp8266.com/stable/package_esp8266com_index.json og trykker på "OK" knappen nederst i vinduet.
+*Efter det skal du ind i din "Board Manager" og installere pakken.
+  *Det gør du ved at navigere til "Tools" -> "Board: " -> "Boards Manager...".
+  *Søg på "esp8266" og du kan vælge: "esp8266 by ESP8266 Community". Du trykker på denne boks og trykker så på "Install".
+  *Når installationen er færdig, vil du se en mængde nye boards at vælge imellem, når du bevæger dig til "Tools" -> "Board: ".
+ *Vælg "NodeMCU 0.9 (ESP-12 Module)" og du er i gang :)
 
 ###Installation ElCapitan
-Vi har indtil videre kun haft held med at bruge terminalen og git til installation af NodeMCU til ElCapitan og selvom det ser svært ud er det ganske ufarligt og du er velkommen til at spørge en ansat hvis du har problemer.Vi laver en guide om hvordan man bruger terminalen og git ganske snart. 
+Vi har indtil videre kun haft held med at bruge terminalen og git til installation af NodeMCU til ElCapitan og selvom det ser svært ud er det ganske ufarligt og du er velkommen til at spørge en ansat hvis du har problemer.Vi laver en guide om hvordan man bruger terminalen og git ganske snart.
 På [denne hjemmeside](http://esp8266.github.io/Arduino/versions/2.1.0/doc/installing.html#boards-manager), kan du finde hvordan man henter de rigtige biblioteker og som sagt har vi haft mest held med git, men man kan også forsøge sig med første del af siden der forklarer hvordan man forklare det igennem Arduino IDE(/programmet).
 Efter man har fuldt instruktionerne, så installer denne [driver](http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/)(som er den vi har linket til i ovenstående).
 Nu skulle det være muligt at NodeMCU 0.9 under boards.
@@ -177,35 +183,4 @@ void loop() {
 Vær i begge tilfælde opmærksom på at boardet ikke resetter når du åbner din "Serial Monitor", så hvis du vil være sikker på at alle dens print med, skal du åbne denne inden du uploader din kode. Husk også at indstille baudraten til "115200".
 
 
-Som altid kan du finde flere eksempler under "File" -> "Examples". Størstedelen af alle ESP8266 eksemplerne burde kunne anvendes med boardet. 
-
 Som altid kan du finde flere eksempler under "File" -> "Examples". Størstedelen af alle ESP8266 eksemplerne burde kunne anvendes med boardet.
-
-Bemærk hvordan vi i det første kodeeksempel antager at det trådløse netværk forbliver forbundet (dvs altid er indefor rækkevidde og så videre..) I virkeligheden er det smart lige at checke en gang i mellem om det stadig kører. Det kan man fx gøre med flg. funktion:
-```
-void wifiCheck()
-{
-if(WiFi.status() != WL_CONNECTED) //if wifi is connected: do nothing.
-	{
-  	int tickCount=0;
-  	Serial.println("Wifi dropped. Retry in 60 seconds.");
-	delay(60000); //wait 60 seconds
-  	Serial.println("Connecting");
-	WiFi.begin(ssid, password); //reconnect
-
-  	while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      Serial.println(".");
-      tickCount++;
-      if(tickCount>100) //after awaiting reconnection for 50 seconds
-    	  {
-          Serial.println("Wifi fail...");
-          while(1); //Endless loop...
-      	  }
-   	}
-
-   //This is the place to do something in case the connection was lost but fixed.
-
-	}
-}
-```
