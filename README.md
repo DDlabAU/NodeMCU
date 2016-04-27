@@ -3,6 +3,16 @@ NodeMCU er et arduino-kompatibelt board med indygget wifi. Dette er en kort guid
 
 ###Kendte problemer
 
+Får du mærkelige fejlmeldinger fra boardet så som 
+
+```
+ets Jan 8 2013,rst cause:2, boot mode:(1,6)
+
+ets Jan 8 2013,rst cause:4, boot mode:(1,6)
+```
+
+
+kan en mulig løsning være bare at genstarte wifi-forbindelsen så den ikke forsøger at forbinde til den tidligere forbindelse. Dette gør du ved at indsætte ``` WiFi.persistent(false);``` helt i starten af din setup(). Det er vores erfaring at denne linje og kan være løsningen på fejlmeldinger/problemer, der ikke virker til at have noget at gøre med wifi-forbindelsen. Får du mærkelige problemer med boardet er det altså et forsøg værd, bare for at være på den sikre side. 
 
 ###Installation
 Sørg for at du har den nyeste version af [arduino](https://www.arduino.cc/en/Main/Software) installeret før du går i gang.
@@ -111,4 +121,3 @@ void loop() {
 
 Vær i begge tilfælde opmærksom på at boardet ikke resetter når du åbner din "Serial Monitor", så hvis du vil være sikker på at alle dens print med, skal du åbne denne inden du uploader din kode. Husk også at indstille baudraten til "115200".
 Som altid kan du finde flere eksempler under "File" -> "Examples". Størstedelen af alle ESP8266 eksemplerne burde kunne anvendes med boardet. 
-
