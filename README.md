@@ -31,13 +31,17 @@ Det er nu lykkedes at få hul igennem til ElCapitan!
 ####og måske tidligere versioner af osx (ikke færdig testet).
 Sørg for at du har den nyeste version af [arduino](https://www.arduino.cc/en/Main/Software) installeret før du går i gang.
 For at anvende dette board skal du have installeret en pakke af custom boards i dit arduino IDE. Det gør du ved at åbne arduino og navigere til dine indstillinger:
-*"File" -> "Preferences".
-  *I tekstboksen ud for "Additional Boards Manager URLs:" indsætter du dette link: http://arduino.esp8266.com/stable/package_esp8266com_index.json og trykker på "OK" knappen nederst i vinduet.
-*Efter det skal du ind i din "Board Manager" og installere pakken.
-  *Det gør du ved at navigere til "Tools" -> "Board: " -> "Boards Manager...".
-  *Søg på "esp8266" og du kan vælge: "esp8266 by ESP8266 Community". Du trykker på denne boks og trykker så på "Install".
-  *Når installationen er færdig, vil du se en mængde nye boards at vælge imellem, når du bevæger dig til "Tools" -> "Board: ".
- *Vælg "NodeMCU 0.9 (ESP-12 Module)" og du er i gang :)
+
+1. "File" -> "Preferences".
+* I tekstboksen ud for "Additional Boards Manager URLs:" indsætter du dette link: http://arduino.esp8266.com/stable/package_esp8266com_index.json og trykker på "OK" knappen nederst i vinduet.
+* Efter det skal du ind i din "Board Manager" og installere pakken.
+  * Det gør du ved at navigere til "Tools" -> "Board: " -> "Boards Manager...".
+  * Søg på "esp8266" og du kan vælge: "esp8266 by ESP8266 Community".
+  * Du trykker på denne boks og trykker så på "Install".
+
+* Når installationen er færdig, vil du se en mængde nye boards at vælge imellem, når du bevæger dig til "Tools" -> "Board: ".
+
+* Vælg "NodeMCU 0.9 (ESP-12 Module)" og du er i gang :)
 
 ###Installation ElCapitan
 Vi har indtil videre kun haft held med at bruge terminalen og git til installation af NodeMCU til ElCapitan og selvom det ser svært ud er det ganske ufarligt og du er velkommen til at spørge en ansat hvis du har problemer.Vi laver en guide om hvordan man bruger terminalen og git ganske snart.
