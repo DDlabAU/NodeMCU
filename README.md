@@ -1,7 +1,7 @@
-#NodeMCU og Arduino
+# NodeMCU og Arduino
 NodeMCU er et arduino-kompatibelt board med indygget wifi. Dette er en kort guide til hvordan du hurtigt får boardet op og køre i dit arduino IDE.
 
-###Kendte problemer
+### Kendte problemer
 
 #### Suspekte fejlbeskeder
 
@@ -27,8 +27,8 @@ NodeMCU modulerne bruger en alternativt seriel modul, som kræver særlige drive
 Det er nu lykkedes at få hul igennem til ElCapitan!
 
 
-###Installation Windows
-####og måske tidligere versioner af osx (ikke færdig testet).
+### Installation Windows
+#### og måske tidligere versioner af osx (ikke færdig testet).
 Sørg for at du har den nyeste version af [arduino](https://www.arduino.cc/en/Main/Software) installeret før du går i gang.
 For at anvende dette board skal du have installeret en pakke af custom boards i dit arduino IDE. Det gør du ved at åbne arduino og navigere til dine indstillinger:
 
@@ -43,14 +43,14 @@ For at anvende dette board skal du have installeret en pakke af custom boards i 
 
 * Vælg "NodeMCU 0.9 (ESP-12 Module)" og du er i gang :)
 
-###Installation ElCapitan
+### Installation ElCapitan
 Vi har indtil videre kun haft held med at bruge terminalen og git til installation af NodeMCU til ElCapitan og selvom det ser svært ud er det ganske ufarligt og du er velkommen til at spørge en ansat hvis du har problemer.Vi laver en guide om hvordan man bruger terminalen og git ganske snart.
 På [denne hjemmeside](http://esp8266.github.io/Arduino/versions/2.1.0/doc/installing.html#boards-manager), kan du finde hvordan man henter de rigtige biblioteker og som sagt har vi haft mest held med git, men man kan også forsøge sig med første del af siden der forklarer hvordan man forklare det igennem Arduino IDE(/programmet).
 Efter man har fuldt instruktionerne, så installer denne [driver](http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/)(som er den vi har linket til i ovenstående).
 Nu skulle det være muligt at NodeMCU 0.9 under boards.
 
 
-###GPIO
+### GPIO
 Pinout for NodeMCU boardet:
 ![Pinout for NodeMCU V0.9](http://ddlab.dk/Node-MCU-Pin-Out-Diagram1.png)
 Det er GPIOx numrene som man bruger når man koder det i Arduino IDE'en.
@@ -86,7 +86,7 @@ static const uint8_t D10  = 1;
 ```
 Er vigtige.. .. Der står nemlig at de numre som er printet på modulet (D#) svarer til de ovenstående i koden.
 
-###Eksempler
+### Eksempler
 Har du adgang til et trådløst netværk kan du bruge dette eksempel, der forbinder til netværket og printer den tildelte ip-adresse. Husk selv at indsætte netværksnavn og kode. Dette kan også gøres med et hotspot som du opretter med din smartphone.
 
 ```
